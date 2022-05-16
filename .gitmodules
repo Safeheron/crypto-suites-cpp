@@ -1,0 +1,30 @@
+[submodule "third_party/crypto-bn-cpp"]
+	path = third_party/crypto-bn-cpp
+	url = https://github.com/Safeheron/crypto-bn-cpp.git
+[submodule "third_party/crypto-curve-cpp"]
+	path = third_party/crypto-curve-cpp
+	url = https://github.com/Safeheron/crypto-curve-cpp.git
+[submodule "third_party/crypto-hash-cpp"]
+	path = third_party/crypto-hash-cpp
+	url = https://github.com/Safeheron/crypto-hash-cpp.git
+[submodule "third_party/crypto-encode-cpp"]
+	path = third_party/crypto-encode-cpp
+	url = https://github.com/Safeheron/crypto-encode-cpp.git
+[submodule "third_party/crypto-paillier-cpp"]
+	path = third_party/crypto-paillier-cpp
+	url = https://github.com/Safeheron/crypto-paillier-cpp.git
+[submodule "third_party/crypto-sss-cpp"]
+	path = third_party/crypto-sss-cpp
+	url = https://github.com/Safeheron/crypto-sss-cpp.git
+[submodule "third_party/crypto-zkp-cpp"]
+	path = third_party/crypto-zkp-cpp
+	url = https://github.com/Safeheron/crypto-zkp-cpp.git
+[submodule "third_party/crypto-mta-cpp"]
+	path = third_party/crypto-mta-cpp
+	url = https://github.com/Safeheron/crypto-mta-cpp.git
+[submodule "third_party/crypto-commitment-cpp"]
+	path = third_party/crypto-commitment-cpp
+	url = https://github.com/Safeheron/crypto-commitment-cpp.git
+[submodule "third_party/crypto-bip32-cpp"]
+	path = third_party/crypto-bip32-cpp
+	url = https://github.com/Safeheron/crypto-bip32-cpp.git
