@@ -64,4 +64,4 @@ if (${ENABLE_TESTS})
     add_subdirectory(third_party/crypto-bip32-cpp/test)
 endif()
 
-#include("cmake/setup_installation.cmake")
+include("cmake/setup_installation.cmake")
