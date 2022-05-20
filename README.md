@@ -2,16 +2,33 @@
 
 Crypto-Suites-CPP is an assembly of all the basic libraries and cryptography protocols from Safeheron, which contains:
 
-- [crypto-bn-cpp](https://github.com/Safeheron/crypto-bn-cpp).
-- [crypto-curve-cpp](https://github.com/Safeheron/crypto-curve-cpp).
-- [crypto-commitment-cpp](https://github.com/Safeheron/crypto-commitment-cpp).
-- [crypto-hash-cpp](https://github.com/Safeheron/crypto-hash-cpp).
-- [crypto-encode-cpp](https://github.com/Safeheron/crypto-encode-cpp).
-- [crypto-mta-cpp](https://github.com/Safeheron/crypto-mta-cpp).
-- [crypto-paillier-cpp](https://github.com/Safeheron/crypto-paillier-cpp).
-- [crypto-sss-cpp](https://github.com/Safeheron/crypto-sss-cpp).
-- [crypto-zkp-cpp](https://github.com/Safeheron/crypto-zkp-cpp).
-- [crypto-bip32-cpp](https://github.com/Safeheron/crypto-bip32-cpp).
+- [crypto-bn-cpp](https://github.com/Safeheron/crypto-bn-cpp): It provides an implementation of C++ big integer. Additionally, it provides operations for modular arithmetic, GCD calculation, primality testing, prime generation, bit manipulation, jacobi symbol calculation, and a few other miscellaneous operations.
+- [crypto-curve-cpp](https://github.com/Safeheron/crypto-curve-cpp). It provides a uniform abstract for elliptic curves based cryptography (ECC).
+  - It contains an extremely simple mathematical interface to onboard new elliptic curves. Use this library for general purpose elliptic curve cryptography.
+  - It provides interfaces on ecdsa to Sepcp256k1 and P256.
+  - It provides interfaces on eddsa to ed25519.
+
+- [crypto-commitment-cpp](https://github.com/Safeheron/crypto-commitment-cpp). It provides several commitment schemes.
+- [crypto-hash-cpp](https://github.com/Safeheron/crypto-hash-cpp). It provides several hash algorithms such as sha1, sha256, sha512, ripemd160, hash160, hash256, hmac_sha256, hmac_sha512 and chacha20.
+- [crypto-encode-cpp](https://github.com/Safeheron/crypto-encode-cpp). It provides encoding interfaces for hex, base58 and base64.
+- [crypto-mta-cpp](https://github.com/Safeheron/crypto-mta-cpp). It provides an implementation of MtA(Multiplicative to Additive) protocol.
+- [crypto-paillier-cpp](https://github.com/Safeheron/crypto-paillier-cpp). It provides an implementation of  Paillier's crypto scheme.
+- [crypto-sss-cpp](https://github.com/Safeheron/crypto-sss-cpp). It provides secret sharing schemes.
+
+- [crypto-zkp-cpp](https://github.com/Safeheron/crypto-zkp-cpp). It provides several zero knowledge protocols.
+  - Schnorr proof.
+  - Proof of knowledge that a pair of group elements {D, E}
+  - Proof of strong RSA modulus.
+  - Range proof in GG18.
+  - Non-interactive proof of correct paillier keypair generation.
+
+- [crypto-bip32-cpp](https://github.com/Safeheron/crypto-bip32-cpp). It provides a BIP32 compatible library which supports bip32-secp256k1 and bip32-ed25519.
+
+
+# Prerequisites
+
+- [GoogleTest](https://github.com/google/googletest). You need it to compile and run test cases. See the [GoogleTest Installation Instructions](./doc/GoogleTest-Installation.md)
+- [OpenSSL](https://github.com/openssl/openssl#documentation). See the [OpenSSL Installation Instructions](./doc/OpenSSL-Installation.md)
 
 # Build and Install
 
@@ -39,7 +56,7 @@ More platforms such as Windows would be supported soon.
 
 CMake is your best option. It supports building on Linux, MacOS and Windows (soon) but also has a good chance of working on other platforms (no promises!). cmake has good support for crosscompiling and can be used for targeting the Android platform.
 
-To build crypto-zkp-cpp from source, follow the BUILDING guide.
+To build crypto-suites-cpp from source, follow the BUILDING guide.
 
 The canonical way to discover dependencies in CMake is the find_package command.
 
