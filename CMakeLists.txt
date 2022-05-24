@@ -25,6 +25,7 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
         third_party/crypto-bip32-cpp/src
         )
 
+set(ENABLE_ASSEMBLE ON)
 add_subdirectory(third_party/crypto-bn-cpp/src)
 add_subdirectory(third_party/crypto-hash-cpp/src)
 add_subdirectory(third_party/crypto-encode-cpp/src)
@@ -36,7 +37,6 @@ add_subdirectory(third_party/crypto-zkp-cpp/src)
 add_subdirectory(third_party/crypto-mta-cpp/src)
 add_subdirectory(third_party/crypto-bip32-cpp/src)
 
-set(ENABLE_ASSEMBLE ON)
 option(ENABLE_TESTS "Enable tests" OFF)
 if (${ENABLE_TESTS})
     enable_testing()
