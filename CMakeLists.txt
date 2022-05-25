@@ -23,7 +23,9 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
         third_party/crypto-zkp-cpp/src
         third_party/crypto-mta-cpp/src
         third_party/crypto-bip32-cpp/src
+        /usr/local/include
         )
+target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE /usr/local/lib)
 
 set(ENABLE_ASSEMBLE ON)
 add_subdirectory(third_party/crypto-bn-cpp/src)
@@ -51,7 +53,10 @@ if (${ENABLE_TESTS})
             third_party/crypto-zkp-cpp/src
             third_party/crypto-mta-cpp/src
             third_party/crypto-bip32-cpp/src
+            /usr/local/include
     )
+    link_directories(/usr/local/lib)
+
     add_subdirectory(third_party/crypto-bn-cpp/test)
     add_subdirectory(third_party/crypto-hash-cpp/test)
     add_subdirectory(third_party/crypto-encode-cpp/test)
