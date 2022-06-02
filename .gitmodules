@@ -28,3 +28,6 @@
 [submodule "third_party/crypto-bip32-cpp"]
 	path = third_party/crypto-bip32-cpp
 	url = https://github.com/Safeheron/crypto-bip32-cpp.git
+[submodule "third_party/crypto-ecies-cpp"]
+	path = third_party/crypto-ecies-cpp
+	url = https://github.com/Safeheron/crypto-ecies-cpp.git

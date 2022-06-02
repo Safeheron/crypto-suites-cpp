@@ -10,6 +10,11 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2 -Wall -Wextra -Wno-unused-parameter 
 cmake_policy(SET CMP0076 NEW)
 cmake_policy(SET CMP0077 NEW)
 cmake_policy(SET CMP0079 NEW)
+
+find_package(PkgConfig REQUIRED)
+pkg_search_module(PROTOBUF REQUIRED protobuf)  # depend on pkg-config, this looks for opencv.pc file
+#set(OPENSSL_USE_STATIC_LIBS TRUE)
+find_package(OpenSSL REQUIRED)
 add_library(${CMAKE_PROJECT_NAME} SHARED "")
 
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
@@ -17,15 +22,24 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
         third_party/crypto-hash-cpp/src
         third_party/crypto-encode-cpp/src
         third_party/crypto-curve-cpp/src
+        third_party/crypto-curve-cpp/third_party
         third_party/crypto-commitment-cpp/src
         third_party/crypto-paillier-cpp/src
         third_party/crypto-sss-cpp/src
         third_party/crypto-zkp-cpp/src
         third_party/crypto-mta-cpp/src
         third_party/crypto-bip32-cpp/src
+        ${PROTOBUF_INCLUDE_DIRS}
+        ${OPENSSL_INCLUDE_DIR}
         /usr/local/include
         )
+
 target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE /usr/local/lib)
+target_link_libraries(${CMAKE_PROJECT_NAME}
+        ${PROTOBUF_LIBRARIES}
+        OpenSSL::Crypto
+        -ldl
+        )
 
 set(ENABLE_ASSEMBLE ON)
 add_subdirectory(third_party/crypto-bn-cpp/src)

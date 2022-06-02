@@ -23,6 +23,8 @@ Crypto-Suites-CPP is an assembly of all the basic libraries and cryptography pro
   - Non-interactive proof of correct paillier keypair generation.
 
 - [crypto-bip32-cpp](https://github.com/Safeheron/crypto-bip32-cpp). It provides a BIP32 compatible library which supports bip32-secp256k1 and bip32-ed25519.
+ 
+- [crypto-ecies-cpp](https://github.com/Safeheron/crypto-ecies-cpp). It provides an implementation of Elliptic Curve Integrated Encryption Scheme according to IEEE 1363 which is an Institute of Electrical and Electronics Engineers (IEEE) standardization project for public-key cryptography.
 
 
 # Prerequisites
