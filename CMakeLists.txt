@@ -22,7 +22,6 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
         third_party/crypto-hash-cpp/src
         third_party/crypto-encode-cpp/src
         third_party/crypto-curve-cpp/src
-        third_party/crypto-curve-cpp/third_party
         third_party/crypto-commitment-cpp/src
         third_party/crypto-paillier-cpp/src
         third_party/crypto-sss-cpp/src
