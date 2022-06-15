@@ -28,6 +28,7 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
         third_party/crypto-zkp-cpp/src
         third_party/crypto-mta-cpp/src
         third_party/crypto-bip32-cpp/src
+        third_party/crypto-ecies-cpp/src
         ${PROTOBUF_INCLUDE_DIRS}
         ${OPENSSL_INCLUDE_DIR}
         /usr/local/include
@@ -51,6 +52,7 @@ add_subdirectory(third_party/crypto-sss-cpp/src)
 add_subdirectory(third_party/crypto-zkp-cpp/src)
 add_subdirectory(third_party/crypto-mta-cpp/src)
 add_subdirectory(third_party/crypto-bip32-cpp/src)
+add_subdirectory(third_party/crypto-ecies-cpp/src)
 
 option(ENABLE_TESTS "Enable tests" OFF)
 if (${ENABLE_TESTS})
@@ -66,6 +68,7 @@ if (${ENABLE_TESTS})
             third_party/crypto-zkp-cpp/src
             third_party/crypto-mta-cpp/src
             third_party/crypto-bip32-cpp/src
+            third_party/crypto-ecies-cpp/src
             /usr/local/include
     )
     link_directories(/usr/local/lib)
@@ -80,6 +83,7 @@ if (${ENABLE_TESTS})
     add_subdirectory(third_party/crypto-zkp-cpp/test)
     add_subdirectory(third_party/crypto-mta-cpp/test)
     add_subdirectory(third_party/crypto-bip32-cpp/test)
+    add_subdirectory(third_party/crypto-ecies-cpp/test)
 endif()
 
 include("cmake/setup_installation.cmake")

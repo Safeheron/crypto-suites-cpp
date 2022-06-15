@@ -41,8 +41,8 @@ Linux and Mac are supported now.  After obtaining the Source, have a look at the
 git clone --recurse-submodules https://github.com/safeheron/crypto-suites-cpp.git
 cd crypto-suites-cpp
 mkdir build && cd build
-# Run "cmake .. -DOPENSSL_ROOT_DIR=Your-Root-Directory-of-OPENSSL" instead of the command below on Mac OS.
-cmake ..
+# Run "cmake .. -DOPENSSL_ROOT_DIR=Your-Root-Directory-of-OPENSSL  -DENABLE_TESTS=ON" instead of the command below on Mac OS.
+cmake ..  -DENABLE_TESTS=ON
 # Add the path to the LD_LIBRARY_PATH environment variable on Mac OS; Ignore it on Linux
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/lib/
 make
