@@ -26,6 +26,44 @@ Crypto-Suites-CPP is an assembly of all the basic libraries and cryptography pro
  
 - [crypto-ecies-cpp](https://github.com/Safeheron/crypto-ecies-cpp). It provides an implementation of Elliptic Curve Integrated Encryption Scheme according to IEEE 1363 which is an Institute of Electrical and Electronics Engineers (IEEE) standardization project for public-key cryptography.
 
+# Important Update in Module "crypto-bn-cpp"
+
+The input of the random number generator changes from "bytes" to "bits".
+
+- The new generators:
+```c++
+safeheron::bignum::BN RandomBN(size_t bits);
+safeheron::bignum::BN RandomBNStrict(size_t bits);
+safeheron::bignum::BN RandomPrime(size_t bits);
+safeheron::bignum::BN RandomPrimeStrict(size_t bits);
+safeheron::bignum::BN RandomSafePrime(size_t bits);
+safeheron::bignum::BN RandomSafePrimeStrict(size_t bits);
+```
+
+- The old generators:
+```c++
+safeheron::bignum::BN RandomBN(size_t byteSize);
+safeheron::bignum::BN RandomBNStrict(size_t byteSize);
+safeheron::bignum::BN RandomPrime(size_t byteSize);
+safeheron::bignum::BN RandomPrimeStrict(size_t byteSize);
+safeheron::bignum::BN RandomSafePrime(size_t byteSize);
+safeheron::bignum::BN RandomSafePrimeStrict(size_t byteSize);
+```
+
+
+**Along with the update, all the usage should update too, otherwise there is a risk.**.
+
+For example, we used to get a 256-bits number like this before:
+```c++
+    BN r = safeheron::bignum::BN RandomBN(256 / 8);
+```
+Now we must invoke the generator like this:
+```c++
+    BN r = safeheron::bignum::BN RandomBN(256);
+```
+**If usage don't update then you will get a small number with 32-bits length, and then it could easily be guessed out by the adversary.**
+
+
 
 # Prerequisites
 
