@@ -51,6 +51,7 @@ install(
             third_party/crypto-zkp-cpp/src/
             third_party/crypto-mta-cpp/src/
             third_party/crypto-bip32-cpp/src/
+            third_party/crypto-ecies-cpp/src/
         DESTINATION include/safeheron
         FILES_MATCHING PATTERN "*.h"
 
@@ -72,5 +73,10 @@ install(
         PATTERN "base58_imp.h" EXCLUDE
 
         # crypto-hash-cpp
-        PATTERN "compat" EXCLUDE
+        PATTERN "compat.h" EXCLUDE
+
+        # crypto-ecies-cpp
+        PATTERN "hmac.h" EXCLUDE
+        PATTERN "kdf.h" EXCLUDE
+        PATTERN "symm.h" EXCLUDE
 )

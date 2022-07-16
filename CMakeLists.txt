@@ -42,6 +42,7 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
         )
 
 set(ENABLE_ASSEMBLE ON)
+add_definitions(-DENABLE_ASSEMBLE)
 add_subdirectory(third_party/crypto-bn-cpp/src)
 add_subdirectory(third_party/crypto-hash-cpp/src)
 add_subdirectory(third_party/crypto-encode-cpp/src)
